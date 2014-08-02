@@ -3,7 +3,8 @@
 # Fill your Flask with Rum!! Aarrgghhh.....
 from flask import Flask, render_template
 from flask import Blueprint
-import rum_config
+from flask_rum import rum_config
+
 
 app = Flask(__name__)
 app.config.from_object(rum_config)
