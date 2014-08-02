@@ -7,6 +7,7 @@ app.register_blueprint(rum)
 app.config.update(
     DEBUG=True,
     #SECRET_KEY='...',
+    PORT=500,
     THEME_FOLDER='rum/banana/',
     TEMPLATE_DEFAULTS = {
     'nav': 'site/blocks/rum_nav.html',
@@ -23,4 +24,4 @@ def suckit(title='Home '):
     return render_template('site/frontpage2.html', title=title)
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=5000, debug=True)
+    app.run(host='localhost')

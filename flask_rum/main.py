@@ -6,7 +6,7 @@ from flask import Blueprint
 import rum_config
 
 app = Flask(__name__)
-app.config.from_object('configs')
+app.config.from_object(rum_config)
 
 rum = Blueprint('rum', __name__, template_folder='rum_templates', static_folder='rum_static')
 app.register_blueprint(rum)
