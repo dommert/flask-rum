@@ -1,6 +1,7 @@
 # Flask-Rum [Version 0.1.1]
 # Rum_Config.py
 
+HOST='localhost'
 DEBUG=True
 PORT=5001
 #SECRET_KEY='...'
