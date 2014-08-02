@@ -17,5 +17,6 @@ def fuckyou(title='fuck'):
 def suckit(title='Home '):
     return render_template('site/frontpage2.html', title=title)
 
+
 if __name__ == '__main__':
-    app.run(host='localhost')
+    app.run(host='localhost', port=app.config['PORT'])
