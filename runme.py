@@ -1,21 +1,21 @@
+# Flask-Rum [Version 0.1.2]
 # Dommert Flask-Rum Loader
-from flask import Flask, render_template
-from flask_rum.main import rum
 
+from flask import Flask
+from flask import render_template
 app = Flask(__name__)
-app.register_blueprint(rum)
 
-import flask_rum.rum_config as rum_config
-app.config.from_object(rum_config)
-app.config.THEME_FOLDER='rum/banana/'
+# Sample Override over route('/about/')
+@app.route('/about/')
+def about2(title='Home '):
+    return render_template('site/sample.html', title=title)
 
-@app.route('/fuckyou')
-def fuckyou(title='fuck'):
-    return 'Fuck you Cunt'
+# Regular Route using Flask-Rum
+@app.route('/sample')
+def sample(title='Home '):
+    return render_template('site/sample.html', title=title)
 
-@app.route('/suckit')
-def suckit(title='Home '):
-    return render_template('site/frontpage2.html', title=title)
+from rum import *
 
 if __name__ == '__main__':
     app.run(host=app.config['HOST'], port=app.config['PORT'], debug=app.config['DEBUG'])
